@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import { useFoodMenu } from "./useFoodMenu";
+import { IFoodMenuItem, useFoodMenu } from "./useFoodMenu";
+import FoodMenuItem from "../FoodMenuItem/FoodMenuItem";
 
 const FoodMenu = () => {
   const { foodCategoryName } = useParams<{ foodCategoryName: string }>();
@@ -20,7 +21,13 @@ const FoodMenu = () => {
 
   console.log("foodMenu", foodMenu);
 
-  return <div>FoodMenu</div>;
+  return (
+    <div>
+      {foodMenu?.map((el: IFoodMenuItem) => {
+        return <FoodMenuItem foodMenuItem={el} key={el.id} />;
+      })}
+    </div>
+  );
 };
 
 export default FoodMenu;
