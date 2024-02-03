@@ -8,11 +8,10 @@ const FoodCategories = () => {
   if (isPending) return "Loading...";
 
   if (error) return "An error has occurred: " + error.message;
- 
+
   return (
-    <div>
-      sdf
-        {foodsCategories?.categories?.map((el: IFoodCategory) => {
+    <div className="">
+        {foodsCategories.map((el: IFoodCategory) => {
             return <FoodCategoryItem foodCategory={el} key={el.id} />
         })}
     </div>

@@ -2,20 +2,20 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 export interface IFoodCategory {
-  userId: number;
   id: number;
   title: string;
-  body: string;
+  collection: string;
+  updated_at: string;
+  created_at: string;
 }
-interface IFoodCategories {
-  categories: IFoodCategory[];
-}
+
+
 export const useFoodCategories = () => {
-  return useQuery<IFoodCategories>({
+  return useQuery<IFoodCategory[]>({
     queryKey: ["foodCategories"],
     queryFn: () =>
       axios
-        .get("https://jsonplaceholder.typicode.com/posts")
+        .get("http://127.0.0.1:8000/product/categories/")
         .then((res) => res.data),
   });
 };

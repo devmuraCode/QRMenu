@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import FoodCategories from "./pages/MainPage/FoodMenuPage/FoodCategories/FoodCategories";
 import MainLayout from "./pages/MainPage/MainLayout";
+import FoodMenu from "./pages/MainPage/FoodMenuPage/FoodMenu/FoodMenu";
 
 export enum AppRoutes {
   MAIN = "main",
@@ -22,7 +23,11 @@ export const router = createBrowserRouter([
       {
         path: RoutePath.foodCategories,
         element: <FoodCategories />,
-      }
+      },
+      {
+        path: `${RoutePath.foodCategories}/:foodCategoryName`,
+        element: <FoodMenu />,
+      },
     ],
   },
 ]);

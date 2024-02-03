@@ -8,7 +8,7 @@ const MainLayout = () => {
     <div className=" flex-col h-screen max-w-[560px] mx-auto">
       <Header/>
       <LocationPub/>
-      <div className="flex gap-7 py-2">
+      <div className="flex gap-7 p-4">
         <Button/>
         <Button/>
       </div>
