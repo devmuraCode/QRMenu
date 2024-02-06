@@ -1,15 +1,15 @@
-const Button = () => {
+import { ICollections } from "@/hooks/useCollections";
+import { FC } from "react";
+
+interface TProps {
+  collectins: ICollections;
+}
+const Button: FC<TProps> = (props) => {
+  const { collectins } = props;
+
   return (
-    <button
-      className="outline outline-offset-2 outline-1 relative
-        disabled:opacity-70
-        disabled:cursor-not-allowed
-        rounded-lg
-        hover:opacity-80
-        transition
-        w-full"
-    >
-      label
+      <button className="bg-orange-500 text-white font-bold py-2 px-4 rounded-full">
+      {collectins.title}
     </button>
   );
 };
